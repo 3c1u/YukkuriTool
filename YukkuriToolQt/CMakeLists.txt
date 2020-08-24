@@ -33,7 +33,9 @@ add_executable(YukkuriToolQt
   mainwindow.cpp
   RiamifyFFI.cpp
   mainwindow.h
+  # forms
   mainwindow.ui
+  # resources
   ${RCC_SOURCES}
   ${QM}
 )

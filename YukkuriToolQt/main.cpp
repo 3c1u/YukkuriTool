@@ -9,8 +9,8 @@
 
 // macOSではノンネイティブなウィンドウがちゃんと表示されない
 // ようなので、仕方が無いのでマクロでオン・オフしてあげる。
-#if !defined(Q_OS_MAC)
-// #define NON_NATIVE_WINDOW_FRAME
+#if !defined(Q_OS_MAC) && 0
+#define NON_NATIVE_WINDOW_FRAME
 #endif
 
 int main(int argc, char *argv[])
