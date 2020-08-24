@@ -149,7 +149,7 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="42"/>
+        <location filename="mainwindow.cpp" line="52"/>
         <source>Failed to initialize the application</source>
         <translation type="unfinished"></translation>
     </message>
@@ -165,8 +165,8 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="main.cpp" line="48"/>
-        <location filename="main.cpp" line="66"/>
+        <location filename="main.cpp" line="72"/>
+        <location filename="main.cpp" line="90"/>
         <source>YukkuriTool</source>
         <translation type="unfinished"></translation>
     </message>

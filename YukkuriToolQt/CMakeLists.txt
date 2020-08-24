@@ -67,4 +67,6 @@ target_link_libraries(YukkuriToolQt PRIVATE
     userenv.lib
     ole32.lib
     winmm.lib
+    dwmapi.lib
+    uxtheme.lib
 )

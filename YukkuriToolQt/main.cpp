@@ -5,6 +5,8 @@
 #include <QDesktopWidget>
 #include <QFontDatabase>
 
+#include <QStyleFactory>
+
 #include "mainwindow.h"
 
 // macOSではノンネイティブなウィンドウがちゃんと表示されない
@@ -16,6 +18,28 @@
 int main(int argc, char *argv[])
 {
   QApplication a(argc, argv);
+  a.setStyle(QStyleFactory::create("Fusion"));
+
+  QPalette darkPalette;
+  darkPalette.setColor(QPalette::Window, QColor(0x30, 0x32, 0x33));
+  darkPalette.setColor(QPalette::WindowText, Qt::white);
+  darkPalette.setColor(QPalette::Base, QColor(25,25,25));
+  darkPalette.setColor(QPalette::AlternateBase, QColor(153,153,153));
+  darkPalette.setColor(QPalette::ToolTipBase, Qt::white);
+  darkPalette.setColor(QPalette::ToolTipText, Qt::white);
+  darkPalette.setColor(QPalette::Text, Qt::white);
+  darkPalette.setColor(QPalette::Light, QColor(0xe0, 0xef, 0xe6));
+  darkPalette.setColor(QPalette::Button, QColor(0x40, 0x43, 0x46));
+  darkPalette.setColor(QPalette::ButtonText, Qt::white);
+  darkPalette.setColor(QPalette::BrightText, Qt::red);
+  darkPalette.setColor(QPalette::Link, QColor(0x56, 0xc8, 0xd8));
+
+  darkPalette.setColor(QPalette::Highlight, QColor(0x56, 0xe2, 0xd8));
+  darkPalette.setColor(QPalette::HighlightedText, Qt::black);
+
+  a.setPalette(darkPalette);
+
+  a.setStyleSheet("QToolTip { color: #ffffff; background-color: #2a82da; border: 1px solid white; }");
 
   QTranslator qt_translator;
   qt_translator.load("qtbase_" + QLocale::system().name(),
@@ -60,7 +84,7 @@ int main(int argc, char *argv[])
 #if defined(Q_OS_MAC)
   mainWindow.setWindowFlags(mainWindow.windowFlags() | Qt::WindowStaysOnTopHint);
 #else
-  mainWindow.setWindowFlags(mainWindow.windowFlags() | Qt::WindowStaysOnTopHint | Qt::Tool);
+  mainWindow.setWindowFlags(mainWindow.windowFlags() | Qt::WindowStaysOnTopHint);
   a.setFont(QFont("Yu Gothic UI", 9));
 #endif
   mainWindow.setWindowTitle(QObject::tr("YukkuriTool"));

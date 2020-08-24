@@ -13,6 +13,8 @@
 #ifdef Q_OS_WIN
 
 #include <Windows.h>
+#include <uxtheme.h>
+#include <dwmapi.h>
 #include <mmsystem.h>
 
 #endif
@@ -28,7 +30,15 @@ MainWindow::MainWindow(QWidget *parent)
 #ifdef Q_OS_MAC
   ___SetDarkMode();
 #endif
+
   ui->setupUi(this);
+
+#ifdef Q_OS_WIN
+  auto hwnd = HWND(winId());
+  const BOOL is_dark_mode = true;
+  assert(SetWindowTheme(hwnd, L"DarkMode_Explorer", nullptr) == S_OK);
+  assert(DwmSetWindowAttribute(hwnd, 20, &is_dark_mode, sizeof(is_dark_mode)) == S_OK);
+#endif
 
   connect(qApp, SIGNAL(focusChanged(QWidget*, QWidget*)),
           this, SLOT(windowActivated()));
