@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>331</width>
+    <height>406</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>YukkuriTool</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="minimumSize">
+    <size>
+     <width>295</width>
+     <height>0</height>
+    </size>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QSplitter" name="splitter">
+      <property name="locale">
+       <locale language="Japanese" country="Japan"/>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="opaqueResize">
+       <bool>true</bool>
+      </property>
+      <property name="childrenCollapsible">
+       <bool>false</bool>
+      </property>
+      <widget class="QPlainTextEdit" name="plainTextEdit">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="statusTip">
+        <string>Input text to make the program speak. Pronunciation will be automatically generated.</string>
+       </property>
+       <property name="locale">
+        <locale language="Japanese" country="Japan"/>
+       </property>
+       <property name="placeholderText">
+        <string>Input text here</string>
+       </property>
+      </widget>
+      <widget class="QPlainTextEdit" name="plainTextEdit_2">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="statusTip">
+        <string>If you want to fix pronunciation, tweak here.</string>
+       </property>
+       <property name="locale">
+        <locale language="Japanese" country="Japan"/>
+       </property>
+       <property name="undoRedoEnabled">
+        <bool>true</bool>
+       </property>
+       <property name="readOnly">
+        <bool>false</bool>
+       </property>
+       <property name="placeholderText">
+        <string>Pronunciation goes here</string>
+       </property>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QPushButton" name="speakButton">
+        <property name="statusTip">
+         <string>Preview the text.</string>
+        </property>
+        <property name="locale">
+         <locale language="Japanese" country="Japan"/>
+        </property>
+        <property name="text">
+         <string>Speak</string>
+        </property>
+        <property name="shortcut">
+         <string>Ctrl+S</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="resetButton">
+        <property name="statusTip">
+         <string>Reset the text field.</string>
+        </property>
+        <property name="locale">
+         <locale language="Japanese" country="Japan"/>
+        </property>
+        <property name="text">
+         <string>Reset</string>
+        </property>
+        <property name="shortcut">
+         <string>Ctrl+R</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="locale">
+         <locale language="Japanese" country="Japan"/>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="generateButton">
+        <property name="statusTip">
+         <string>Generate a wave file from the text.</string>
+        </property>
+        <property name="locale">
+         <locale language="Japanese" country="Japan"/>
+        </property>
+        <property name="text">
+         <string>Generate</string>
+        </property>
+        <property name="shortcut">
+         <string>Ctrl+G</string>
+        </property>
+        <property name="default">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="locale">
+       <locale language="Japanese" country="Japan"/>
+      </property>
+      <property name="title">
+       <string>Options</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <property name="spacing">
+        <number>20</number>
+       </property>
+       <item>
+        <widget class="QCheckBox" name="checkBox">
+         <property name="statusTip">
+          <string>If the checkbox is on, the program will paste your clipboard to the text field when activated.</string>
+         </property>
+         <property name="locale">
+          <locale language="Japanese" country="Japan"/>
+         </property>
+         <property name="text">
+          <string>Paste automatically from the clipboard</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="checkBox_2">
+         <property name="statusTip">
+          <string>If the checkbox is on, the program will generate the waveform and copy it when deactivated.</string>
+         </property>
+         <property name="locale">
+          <locale language="Japanese" country="Japan"/>
+         </property>
+         <property name="text">
+          <string>Copy a generated wavefile into the clipboard</string>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QFormLayout" name="formLayout">
+         <item row="0" column="0">
+          <widget class="QLabel" name="label">
+           <property name="maximumSize">
+            <size>
+             <width>80</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="locale">
+            <locale language="Japanese" country="Japan"/>
+           </property>
+           <property name="text">
+            <string>Voice Preset</string>
+           </property>
+           <property name="buddy">
+            <cstring>voicePresets</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QComboBox" name="voicePresets">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="statusTip">
+            <string>Selects the voice from the presets.</string>
+           </property>
+           <property name="locale">
+            <locale language="Japanese" country="Japan"/>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_2">
+           <property name="locale">
+            <locale language="Japanese" country="Japan"/>
+           </property>
+           <property name="midLineWidth">
+            <number>-16</number>
+           </property>
+           <property name="text">
+            <string>Speed</string>
+           </property>
+           <property name="buddy">
+            <cstring>horizontalSlider</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item>
+            <widget class="QSlider" name="horizontalSlider">
+             <property name="locale">
+              <locale language="Japanese" country="Japan"/>
+             </property>
+             <property name="minimum">
+              <number>50</number>
+             </property>
+             <property name="maximum">
+              <number>200</number>
+             </property>
+             <property name="value">
+              <number>100</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_3">
+             <property name="minimumSize">
+              <size>
+               <width>30</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>30</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="locale">
+              <locale language="Japanese" country="Japan"/>
+             </property>
+             <property name="text">
+              <string>100</string>
+             </property>
+             <property name="textFormat">
+              <enum>Qt::PlainText</enum>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <property name="spacing">
+          <number>3</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="kevinView">
+           <property name="minimumSize">
+            <size>
+             <width>24</width>
+             <height>24</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>24</width>
+             <height>24</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="statusTip">
+            <string>Drag and drop to put an audio file into your video editor</string>
+           </property>
+           <property name="locale">
+            <locale language="Japanese" country="Japan"/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="textFormat">
+            <enum>Qt::PlainText</enum>
+           </property>
+           <property name="pixmap">
+            <pixmap resource="assets.qrc">:/fileicon.png</pixmap>
+           </property>
+           <property name="scaledContents">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_2">
+           <property name="locale">
+            <locale language="Japanese" country="Japan"/>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_2">
+           <property name="statusTip">
+            <string>Open Preferences.</string>
+           </property>
+           <property name="locale">
+            <locale language="Japanese" country="Japan"/>
+           </property>
+           <property name="text">
+            <string>Settings...</string>
+           </property>
+           <property name="shortcut">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton">
+           <property name="statusTip">
+            <string>Manages the voice presets.</string>
+           </property>
+           <property name="locale">
+            <locale language="Japanese" country="Japan"/>
+           </property>
+           <property name="text">
+            <string>Manage Presets...</string>
+           </property>
+           <property name="shortcut">
+            <string>Ctrl+P</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusBar">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;</string>
+   </property>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>plainTextEdit</tabstop>
+  <tabstop>plainTextEdit_2</tabstop>
+  <tabstop>speakButton</tabstop>
+  <tabstop>resetButton</tabstop>
+  <tabstop>generateButton</tabstop>
+  <tabstop>checkBox</tabstop>
+  <tabstop>checkBox_2</tabstop>
+  <tabstop>pushButton_2</tabstop>
+  <tabstop>pushButton</tabstop>
+ </tabstops>
+ <resources>
+  <include location="assets.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>generateButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>generateVoice()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>284</x>
+     <y>144</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>291</x>
+     <y>217</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>resetButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>resetField()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>175</x>
+     <y>144</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>201</x>
+     <y>183</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>speakButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>speakText()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>89</x>
+     <y>144</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>9</x>
+     <y>251</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>setClipboardPasteEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>273</x>
+     <y>202</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>291</x>
+     <y>284</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_2</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>setClipboardCopyEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>273</x>
+     <y>243</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>291</x>
+     <y>364</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>openSettings()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>150</x>
+     <y>359</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>172</x>
+     <y>402</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>managePresets()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>272</x>
+     <y>359</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>291</x>
+     <y>405</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>plainTextEdit</sender>
+   <signal>textChanged()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>generateYomi()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>239</x>
+     <y>49</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>291</x>
+     <y>50</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>voicePresets</sender>
+   <signal>activated(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>setPreset(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>272</x>
+     <y>287</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>45</x>
+     <y>417</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>setSpeed(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>235</x>
+     <y>312</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>149</x>
+     <y>573</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>label_3</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>235</x>
+     <y>312</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>271</x>
+     <y>312</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>generateVoice()</slot>
+  <slot>openSettings()</slot>
+  <slot>managePresets()</slot>
+  <slot>setClipboardPasteEnabled(bool)</slot>
+  <slot>setClipboardCopyEnabled(bool)</slot>
+  <slot>resetField()</slot>
+  <slot>speakText()</slot>
+  <slot>generateYomi()</slot>
+  <slot>setPreset(int)</slot>
+  <slot>setSpeed(int)</slot>
+ </slots>
+</ui>
