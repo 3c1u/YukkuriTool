@@ -1,0 +1,215 @@
+# プリセット設定ファイルです．
+# 速度，音程，声質（スロット番号）で指定します
+presets: 
+  - name: 霊夢
+    speed: 100
+    pitch: 100
+    slot: 0
+  - name: 魔理沙
+    speed: 100
+    pitch: 100
+    slot: 1
+  - name: 早苗
+    speed: 105
+    pitch: 135
+    slot: 1
+  - name: チルノ
+    speed: 115
+    pitch: 120
+    slot: 1
+  - name: 大妖精
+    speed: 96
+    pitch: 138
+    slot: 0
+  - name: ルーミア
+    speed: 63
+    pitch: 165
+    slot: 0
+  - name: ルーミア大
+    speed: 97
+    pitch: 135
+    slot: 1
+  - name: リグル
+    speed: 80
+    pitch: 151
+    slot: 1
+  - name: ミスチー
+    speed: 105
+    pitch: 139
+    slot: 1
+  - name: 慧音
+    speed: 95
+    pitch: 145
+    slot: 6
+  - name: 妹紅
+    speed: 120
+    pitch: 130
+    slot: 1
+  - name: 橙
+    speed: 80
+    pitch: 160
+    slot: 0
+  - name: 藍
+    speed: 115
+    pitch: 113
+    slot: 1
+  - name: 紫＆幽々子
+    speed: 96
+    pitch: 127
+    slot: 1
+  - name: 紫＆永琳
+    speed: 97
+    pitch: 106
+    slot: 6
+  - name: てゐ
+    speed: 100
+    pitch: 122
+    slot: 1
+  - name: 優曇華
+    speed: 80
+    pitch: 120
+    slot: 0
+  - name: 輝夜
+    speed: 85
+    pitch: 133
+    slot: 0
+  - name: サトリ
+    speed: 89
+    pitch: 134
+    slot: 0
+  - name: こいし
+    speed: 75
+    pitch: 181
+    slot: 1
+  - name: お燐
+    speed: 130
+    pitch: 125
+    slot: 1
+  - name: お空
+    speed: 104
+    pitch: 122
+    slot: 1
+  - name: 射命丸
+    speed: 120
+    pitch: 125
+    slot: 1
+  - name: 椛
+    speed: 120
+    pitch: 110
+    slot: 0
+  - name: ハタテ
+    speed: 25
+    pitch: 125
+    slot: 0
+  - name: 諏訪子
+    speed: 115
+    pitch: 145
+    slot: 4
+  - name: 幽香
+    speed: 100
+    pitch: 160
+    slot: 1
+  - name: 小鈴
+    speed: 99
+    pitch: 130
+    slot: 0
+  - name: ニトリ
+    speed: 149
+    pitch: 123
+    slot: 4
+  - name: 正邪
+    speed: 110
+    pitch: 133
+    slot: 6
+  - name: レミリア
+    speed: 80
+    pitch: 150
+    slot: 1
+  - name: フラン
+    speed: 115
+    pitch: 100
+    slot: 4
+  - name: 咲夜
+    speed: 105
+    pitch: 125
+    slot: 0
+  - name: 美鈴
+    speed: 110
+    pitch: 155
+    slot: 6
+  - name: パチュリー（ガラガラ声）
+    speed: 80
+    pitch: 94
+    slot: 7
+  - name: パチュリー（正常時）
+    speed: 100
+    pitch: 140
+    slot: 6
+  - name: 小悪魔
+    speed: 95
+    pitch: 165
+    slot: 0
+  - name: アリス
+    speed: 110
+    pitch: 130
+    slot: 0
+  - name: 小傘
+    speed: 105
+    pitch: 145
+    slot: 1
+  - name: パルスィー
+    speed: 130
+    pitch: 98
+    slot: 0
+  - name: ナズーリン
+    speed: 105
+    pitch: 135
+    slot: 6
+  - name: 物部布都
+    speed: 110
+    pitch: 123
+    slot: 0
+  - name: 罪袋
+    speed: 110
+    pitch: 130
+    slot: 3
+  - name: 四季映姫
+    speed: 100
+    pitch: 131
+    slot: 1
+  - name: 小野塚小町
+    speed: 100
+    pitch: 129
+    slot: 1
+  - name: 聖
+    speed: 96
+    pitch: 120
+    slot: 1
+  - name: 豊聡耳神子
+    speed: 130
+    pitch: 103
+    slot: 0
+  - name: 寅丸星
+    speed: 110
+    pitch: 123
+    slot: 1
+  - name: ぬえ
+    speed: 100
+    pitch: 125
+    slot: 4
+  - name: 響子
+    speed: 70
+    pitch: 165
+    slot: 0
+  - name: 一輪
+    speed: 130
+    pitch: 111
+    slot: 1
+  - name: 村紗
+    speed: 100
+    pitch: 132
+    slot: 1
+  - name: 比那名居天子
+    speed: 115
+    pitch: 122
+    slot: 0

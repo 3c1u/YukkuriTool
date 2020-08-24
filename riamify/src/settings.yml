@@ -1,0 +1,80 @@
+# ゆっくりツールの設定ファイルです．現時点では，GUIの設定画面は用意されていません．
+# ファイル形式は標準的なYAMLなので，編集はそこまで難しくないと思います．
+#
+# 設定ファイルの読み込みに失敗した場合，デフォルトの設定が読み込まれます．
+# また，設定をリセットしたい場合はsettings.ymlを削除してください．自動的に再生成
+# されます．
+# ---------------------------------------------------------------------
+# 書き出し用の設定です．
+# exportで，WAVファイルの出力先を指定できます．
+# UNIXスタイルおよびWindows形式のパスに対応しています．
+export: ./
+# formatで，ファイル出力名のフォーマットを指定できます．
+# フォーマットのオプションはここを参考にしてください：
+# https://docs.rs/chrono/0.4.0/chrono/format/strftime/index.html
+format: output_%H%M%S_%Y_%m_%d
+# DLLがあるディレクトリを指定します．相対パスで指定するのが
+# 良いでしょう．
+prefix: ../AquesTalk_mv/bin
+# 声のDLLを指定します．
+voices:
+  - path: ./f1/AquesTalk.dll
+    name: 女声１
+    description: ゆっくり霊夢の声です。
+  - path: ./f2/AquesTalk.dll
+    name: 女声２
+    description: ゆっくり魔理沙の声です。
+  - path: ./m1/AquesTalk.dll
+    name: 男声１
+    description: 男声１です。
+  - path: ./m2/AquesTalk.dll
+    name: 男声２
+    description: 男声２です。
+  - path: ./dvd/AquesTalk.dll
+    name: 機械
+    description: 機械です。
+  - path: ./jgr/AquesTalk.dll
+    name: 特殊
+    description: 特殊です。
+  - path: ./imd1/AquesTalk.dll
+    name: 中性
+    description: 中性です。
+  - path: ./r1/AquesTalk.dll
+    name: ロボット
+    description: ロボットです。
+# .WAVファイルの最後に付加される空白時間です．
+# サンプル数で指定します．（サンプリングレートは44,100 [Hz]です）
+delay: 22050
+# オーバーサンプルをします．
+oversample: false
+# リサンプリングのクオリティを指定します．fastest/medium/high/rawから選んでください．
+resampling_quality: raw
+# 棒読みします．アクセント情報を付加しません．
+bouyomi: true
+# 単純な置換を行う辞書機能です．置換したい言葉をwordに，
+# 変換後の結果（読み）をreplaceに指定してください．
+# 注意）英単語はすべて小文字で入力してください．文章の正規化の都合上，
+#      すべての入力文字列は小文字に変換されてから変換が適用されます．
+#      また、MeCabによる品詞分解および読みの生成をバイパスするので，
+#      AquesTalkがそのまま読める形（アクセント含む）で記述するよう
+#      にしてください．
+dictionary:
+  - word: 優曇華
+    replace: うどんげ'
+  - word: qt
+    replace: きゅうと'
+# 外部辞書を読み込むこともできます．
+# "単語　読み　優先度"の形式になっています．（SofTalkの辞書を読み込め
+# る場合があります．）
+# MeCabの解析結果よりもこの辞書が優先されるので，必要な語彙のみ登録する
+# ことをお勧めします．
+# 注意）辞書ファイルは"必ず"UTF-8で保存してください．他の形式のファイル
+#      には現在対応していません．
+#      内部処理の都合上，置換後の"#"は特殊記号として扱われます．（ゆっくり
+#      ツール内部では，#で囲まれた文字はMeCabの構文解析をバイパスするよう
+#      になっています．）"##"のように#を二回繰り返すとエスケープできます．
+#      また，MeCabの構文解析をバイパスしたい際は，#で囲むこともできます．
+#      例）森久保乃々 #もりく'ぼ/の'の# 0
+external_dictionary: []
+# external_dictionary:
+#  - ../eng.stk
